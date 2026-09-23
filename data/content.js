@@ -6,7 +6,7 @@
  *  experience, testimonials, socials, SEO tags) lives here.
  *  Components read from this file — you never need to touch them.
  *
- *  Built from Chinmay_Shastry_AI_Engineer_Resume.pdf (Aug 2026).
+ *  Built from the AI Engineer résumé (Aug 2026).
  *  Positioned for Data Analyst / Data Scientist / AI Engineer roles.
  *  Anything marked  // TODO  still needs your attention.
  * ════════════════════════════════════════════════════════════════
@@ -29,7 +29,7 @@ import {
  *  SEO / social sharing tags (used in app/layout.js)
  * ──────────────────────────────────────────────── */
 export const siteMeta = {
-  title: "Chinmay Shastry — AI / GenAI Engineer",
+  title: "Chinmmay V Shastrry — AI / GenAI Engineer",
   description:
     "AI/GenAI Engineer in Bengaluru building hybrid RAG pipelines, agentic LLM workflows, and deep-learning systems — with five years in financial markets behind the technical decisions.",
   url: "https://chinmayshastryportfolio.vercel.app",
@@ -53,7 +53,7 @@ export const siteMeta = {
  *  Profile / hero section
  * ──────────────────────────────────────────────── */
 export const profile = {
-  name: "Chinmay Shastry",
+  name: "Chinmmay V Shastrry",
   location: "Bengaluru, India",
   email: "chinmay.v.shastry@gmail.com",
 
@@ -79,7 +79,7 @@ export const profile = {
     "I build RAG systems, LLM applications and machine-learning models, and I came to them after five years managing investment portfolios. Finance and AI is the intersection I want to keep working in.",
 
   // Résumé download link (file lives in /public). Set to "" to hide the button.
-  resumeUrl: "/Chinmay_Shastry_Resume.pdf",
+  resumeUrl: "/Chinmmay_V_Shastrry_Resume.pdf",
 };
 
 /* ────────────────────────────────────────────────
@@ -99,11 +99,11 @@ export const navLinks = [
  * ──────────────────────────────────────────────── */
 export const about = {
   photo: "/images/profile.jpg",
-  photoAlt: "Portrait of Chinmay Shastry",
+  photoAlt: "Portrait of Chinmmay V Shastrry",
 
   // Each string renders as its own paragraph
   bio: [
-    "I'm Chinmay Shastry, an AI engineer in Bengaluru. Before this I ran my own financial practice for about five years — portfolio management for a client list that passed fifty, an AngelOne sub-brokership, ITR filing, and a Tata AIA insurance agency. Whatever the client needed, basically. A lot of it came down to sitting with someone until they were comfortable placing their own order and setting a stop loss, which is good training for explaining complicated things to people who are nervous.",
+    "I'm Chinmmay V Shastrry, an AI engineer in Bengaluru. Before this I ran my own financial practice for about five years — portfolio management for a client list that passed fifty, an AngelOne sub-brokership, ITR filing, and a Tata AIA insurance agency. Whatever the client needed, basically. A lot of it came down to sitting with someone until they were comfortable placing their own order and setting a stop loss, which is good training for explaining complicated things to people who are nervous.",
     "In January 2025 I moved into technology. I don't think of it as leaving finance — I still think in it — I just wanted better tools for the problems I'd already spent five years on. It was early enough that AI wasn't the noise it is now, which in hindsight I'm glad about.",
     "I did the DataMites AI engineering programme at their Marathahalli branch, then an eight-month internship at Rubixe from October 2025 to June 2026, building computer vision and NLP systems — including a sign-language recogniser that reached 99.87% accuracy across 24 gestures. From there I worked forward through transformers into LLMs, RAG, and now agentic systems, which is where most of my own projects sit. Three are live and you can click through from this page.",
     "None of it came easily at first. Coming from finance, the coding environment took about a year and a half before it felt genuinely comfortable, and the concepts underneath it — machine learning, deep learning, transformers, retrieval, agents — took real work to get straight.",

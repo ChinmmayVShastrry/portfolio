@@ -1,4 +1,4 @@
-# Chinmay Shastry — Personal Portfolio
+# Chinmmay V Shastrry — Personal Portfolio
 
 A warm, single-page portfolio built with **Next.js (App Router)**, **Tailwind CSS**, **Framer Motion**, and **Lucide icons**. Fully static — no backend, no database — and deployable to Vercel or Netlify with zero configuration.
 
@@ -45,7 +45,7 @@ That's it — submissions will arrive in your email inbox.
 - **Your photo** → already in place at `public/images/profile.jpg` (1200×1500, EXIF stripped). To swap it, overwrite that file with another 4:5 portrait
 - **Project screenshots** → drop 16:9 images (e.g. 1200×675) into `public/images/projects/` and update each project's `image` path
 - **Social share image** → drop a 1200×630 image at `public/images/og.png` and set `siteMeta.ogImage` to `"/images/og.png"`
-- **Résumé** → replace `public/Chinmay_Shastry_Resume.pdf` with the latest version (same filename, or update `profile.resumeUrl`)
+- **Résumé** → replace `public/Chinmmay_V_Shastrry_Resume.pdf` with the latest version (same filename, or update `profile.resumeUrl`)
 
 ### ⚠️ Before you go live
 
@@ -110,6 +110,6 @@ If you'd rather ship a plain static export (no Netlify Next.js runtime), uncomme
 │   └── content.js       # ★ ALL site content — edit this
 ├── public/
 │   ├── images/          # Placeholder artwork (replace with real images)
-│   └── Chinmay_Shastry_Resume.pdf
+│   └── Chinmmay_V_Shastrry_Resume.pdf
 └── tailwind.config.js   # Warm palette (hex codes documented at top)
 ```
