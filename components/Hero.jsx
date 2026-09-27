@@ -55,11 +55,12 @@ export default function Hero() {
   const typed = useTypewriter(profile.roles);
   const reduced = useReducedMotion();
 
-  // Shared entrance animation, staggered down the page
+  // Staggered entrance. Deliberately CSS-only and transform-only: the hero
+  // is fully visible in the server HTML, so it paints before any JavaScript
+  // loads. (A JS opacity fade left it blank until hydration finished.)
   const rise = (delay) => ({
-    initial: { opacity: 0, y: reduced ? 0 : 24 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6, delay: reduced ? 0 : delay },
+    className: "hero-rise",
+    style: { animationDelay: `${delay}s` },
   });
 
   return (
@@ -75,9 +76,9 @@ export default function Hero() {
 
       <div className="relative mx-auto w-full max-w-6xl py-24">
         {/* Availability badge + location */}
-        <motion.div
-          {...rise(0)}
-          className="mb-6 flex flex-wrap items-center gap-x-5 gap-y-3"
+        <div
+          style={rise(0).style}
+          className={`${rise(0).className} mb-6 flex flex-wrap items-center gap-x-5 gap-y-3`}
         >
           {profile.availability && (
             <span className="inline-flex items-center gap-2 rounded-full border border-terracotta/25 bg-terracotta/10 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-terracotta dark:border-ember/30 dark:bg-ember/10 dark:text-ember">
@@ -106,36 +107,39 @@ export default function Hero() {
               Open to {profile.openToCities.join(" · ")}
             </span>
           )}
-        </motion.div>
+        </div>
 
-        <motion.h1
-          {...rise(0.1)}
-          className="font-display text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl"
+        <h1
+          style={rise(0.1).style}
+          className={`${rise(0.1).className} font-display text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl`}
         >
           {profile.name}
-        </motion.h1>
+        </h1>
 
         {/* Rotating / typing tagline */}
-        <motion.p
-          {...rise(0.2)}
-          className="mt-5 min-h-[2.5rem] text-2xl font-medium text-terracotta sm:text-3xl dark:text-ember"
+        <p
+          style={rise(0.2).style}
+          className={`${rise(0.2).className} mt-5 min-h-[2.5rem] text-2xl font-medium text-terracotta sm:text-3xl dark:text-ember`}
           aria-label={`Roles: ${profile.roles.join(", ")}`}
         >
           <span aria-hidden="true">
             {typed}
             <span className="animate-pulse font-light text-amber dark:text-honey">|</span>
           </span>
-        </motion.p>
+        </p>
 
-        <motion.p
-          {...rise(0.3)}
-          className="mt-6 max-w-xl text-lg leading-relaxed text-cocoa dark:text-latte"
+        <p
+          style={rise(0.3).style}
+          className={`${rise(0.3).className} mt-6 max-w-xl text-lg leading-relaxed text-cocoa dark:text-latte`}
         >
           {profile.intro}
-        </motion.p>
+        </p>
 
         {/* CTAs */}
-        <motion.div {...rise(0.4)} className="mt-10 flex flex-wrap items-center gap-4">
+        <div
+          style={rise(0.4).style}
+          className={`${rise(0.4).className} mt-10 flex flex-wrap items-center gap-4`}
+        >
           <a
             href="#projects"
             className="group inline-flex items-center gap-2 rounded-full bg-terracotta px-7 py-3.5 font-medium text-cream shadow-soft transition-all hover:-translate-y-0.5 hover:bg-terracotta-dark hover:shadow-lift"
@@ -163,7 +167,7 @@ export default function Hero() {
               Résumé
             </a>
           )}
-        </motion.div>
+        </div>
       </div>
 
       {/* Scroll cue — gently bobs to hint there's more below */}

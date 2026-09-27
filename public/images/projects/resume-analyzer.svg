@@ -17,5 +17,5 @@
   <rect x="320" y="275" width="120" height="14" rx="7" fill="#C25E40"/>
   <rect x="320" y="305" width="160" height="14" rx="7" fill="#E7DCCB"/>
   <rect x="320" y="305" width="90" height="14" rx="7" fill="#D99A4E"/>
-  <text x="400" y="410" font-family="Georgia, serif" font-size="30" fill="#FAF5EE" text-anchor="middle" opacity="0.95">LLM Resume Analyzer</text>
+  <text x="400" y="410" font-family="Georgia, serif" font-size="30" fill="#FAF5EE" text-anchor="middle" opacity="0.95">AI R&#233;sum&#233; Analyzer</text>
 </svg>

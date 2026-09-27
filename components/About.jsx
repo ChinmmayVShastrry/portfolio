@@ -13,7 +13,10 @@ export default function About() {
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="About"
-          title={`A little about ${profile.name}`}
+          // Non-breaking spaces keep the name on one line, so the heading
+          // wraps as "A little about / Chinmmay V Shastrry" and never
+          // splits the name itself.
+          title={`A little about ${profile.name.replace(/ /g, " ")}`}
         />
 
         <div className="grid items-center gap-12 md:grid-cols-[2fr_3fr] md:gap-16">

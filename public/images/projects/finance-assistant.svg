@@ -8,5 +8,5 @@
   <rect width="800" height="450" fill="url(#g1)"/>
   <polyline points="80,330 200,250 320,290 440,180 560,220 680,120" fill="none" stroke="#FAF5EE" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
   <circle cx="680" cy="120" r="14" fill="#FAF5EE"/>
-  <text x="400" y="410" font-family="Georgia, serif" font-size="30" fill="#FAF5EE" text-anchor="middle" opacity="0.95">AI Finance Research Assistant</text>
+  <text x="400" y="410" font-family="Georgia, serif" font-size="30" fill="#FAF5EE" text-anchor="middle" opacity="0.95">StoxAI — Indian Market Research</text>
 </svg>

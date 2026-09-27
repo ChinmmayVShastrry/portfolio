@@ -10,5 +10,5 @@
   <path d="M 345 180 v -35 a 55 55 0 0 1 110 0 v 35" fill="none" stroke="#FAF5EE" stroke-width="18" opacity="0.9"/>
   <circle cx="400" cy="240" r="18" fill="#C25E40"/>
   <rect x="392" y="248" width="16" height="36" rx="8" fill="#C25E40"/>
-  <text x="400" y="410" font-family="Georgia, serif" font-size="30" fill="#FAF5EE" text-anchor="middle" opacity="0.95">Enterprise RAG System</text>
+  <text x="400" y="410" font-family="Georgia, serif" font-size="30" fill="#FAF5EE" text-anchor="middle" opacity="0.95">DocuMind — Enterprise RAG</text>
 </svg>

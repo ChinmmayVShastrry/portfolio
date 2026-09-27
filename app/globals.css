@@ -17,6 +17,28 @@ body {
   @apply bg-night text-parchment;
 }
 
+/* Balance multi-line headings so they don't end on a single dangling
+   word ("…hire / me?", "…Hindustani / classical"). */
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+/* Hero entrance (see components/Hero.jsx). Transform only — never opacity —
+   so the hero is readable from the very first paint, before JavaScript. */
+@keyframes hero-rise {
+  from {
+    transform: translateY(14px);
+  }
+  to {
+    transform: none;
+  }
+}
+
+.hero-rise {
+  animation: hero-rise 0.7s cubic-bezier(0.21, 0.47, 0.32, 0.98) both;
+}
+
 /* Warm selection highlight instead of the browser default blue */
 ::selection {
   @apply bg-terracotta/25;

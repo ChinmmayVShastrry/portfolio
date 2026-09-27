@@ -14,5 +14,5 @@
   </g>
   <polyline points="181,215 279,165 377,110 475,175 573,128 660,92" fill="none" stroke="#FAF5EE" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="14 10" opacity="0.95"/>
   <circle cx="660" cy="92" r="13" fill="#FAF5EE"/>
-  <text x="400" y="412" font-family="Georgia, serif" font-size="29" fill="#FAF5EE" text-anchor="middle" opacity="0.95">Predictive Modeling &amp; Forecasting</text>
+  <text x="400" y="412" font-family="Georgia, serif" font-size="29" fill="#FAF5EE" text-anchor="middle" opacity="0.95">Classical ML &amp; Analytics</text>
 </svg>

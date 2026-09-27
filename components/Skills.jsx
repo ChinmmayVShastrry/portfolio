@@ -67,10 +67,17 @@ export default function Skills() {
           </h3>
         </Reveal>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        {/* Masonry columns rather than a grid: groups vary a lot in size
+            (5 tags vs 16), and a grid stretched the small ones into
+            mostly-empty boxes to match their row. */}
+        <div className="gap-6 md:columns-2">
           {skillGroups.map((group, i) => (
-            <Reveal key={group.title} delay={0.06 * (i % 2)} className="h-full">
-              <div className="h-full rounded-3xl border border-linen bg-cream/70 p-6 dark:border-bark dark:bg-night/50">
+            <Reveal
+              key={group.title}
+              delay={0.06 * (i % 2)}
+              className="mb-6 break-inside-avoid"
+            >
+              <div className="rounded-3xl border border-linen bg-cream/70 p-6 dark:border-bark dark:bg-night/50">
                 <h4 className="mb-4 text-sm font-semibold uppercase tracking-[0.15em] text-terracotta dark:text-ember">
                   {group.title}
                 </h4>
@@ -91,7 +98,7 @@ export default function Skills() {
 
         {/* Currently learning — deliberately styled apart from the above */}
         {learning?.items?.length > 0 && (
-          <Reveal delay={0.1} className="mt-6">
+          <Reveal delay={0.1}>
             <div className="rounded-3xl border border-dashed border-amber/50 bg-amber/5 p-6 dark:border-honey/40 dark:bg-honey/5">
               <h4 className="mb-4 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.15em] text-brown dark:text-honey">
                 <Sparkles size={15} aria-hidden="true" />
