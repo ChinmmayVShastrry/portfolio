@@ -32,7 +32,7 @@ export const siteMeta = {
   title: "Chinmmay V Shastrry — AI / GenAI Engineer",
   description:
     "AI/GenAI Engineer in Bengaluru building hybrid RAG pipelines, agentic LLM workflows, and deep-learning systems — with five years in financial markets behind the technical decisions.",
-  url: "https://chinmayshastryportfolio.vercel.app",
+  url: "https://chinmmayportfolio.vercel.app",
   // 1200×630 preview card shown when the site is shared on LinkedIn,
   // X, WhatsApp etc. Regenerate it if the name or tagline changes.
   ogImage: "/images/og.png",
@@ -55,7 +55,7 @@ export const siteMeta = {
 export const profile = {
   name: "Chinmmay V Shastrry",
   location: "Bengaluru, India",
-  email: "chinmay.v.shastry@gmail.com",
+  email: "chinmmayvshastrry@gmail.com",
 
   // Cities you're open to working in — shown in the hero and in Contact.
   // Recruiters filter hard on location, which is why it appears twice.
@@ -325,7 +325,7 @@ export const projects = [
     alt: "StoxAI Indian market research assistant preview",
     tags: ["LLM", "Finance", "Tool Calling", "GPT-4o-mini", "Streamlit"],
     liveUrl: "https://stoxai-market.streamlit.app/",
-    sourceUrl: "https://github.com/ChinmayShastry/StoxAI",
+    sourceUrl: "https://github.com/ChinmmayVShastrry/StoxAI",
   },
   {
     featured: true,
@@ -336,7 +336,7 @@ export const projects = [
     alt: "RAG Atlas interactive RAG explainer preview",
     tags: ["RAG", "Architectures", "Evaluation", "Guardrails", "Embeddings"],
     liveUrl: "https://rag-atlas-learn.vercel.app",
-    sourceUrl: "https://github.com/ChinmayShastry/rag-atlas",
+    sourceUrl: "https://github.com/ChinmmayVShastrry/rag-atlas",
   },
   {
     title: "DocChat AI — Hybrid RAG",
@@ -346,7 +346,7 @@ export const projects = [
     alt: "DocChat AI hybrid RAG project preview",
     tags: ["RAG", "LangChain", "FAISS", "BM25", "Reranking"],
     liveUrl: "https://docchat-ai.streamlit.app",
-    sourceUrl: "https://github.com/ChinmayShastry/docchat-ai",
+    sourceUrl: "https://github.com/ChinmmayVShastrry/docchat-ai",
   },
   {
     // `status` renders an "in progress" badge instead of the Featured one.
@@ -369,7 +369,7 @@ export const projects = [
     alt: "AI résumé analyzer project preview",
     tags: ["NLP", "Sentence Transformers", "ATS", "Agentic AI", "Streamlit"],
     liveUrl: "https://resume-aianalyzer.streamlit.app/",
-    sourceUrl: "https://github.com/ChinmayShastry/ai-resume-analyzer",
+    sourceUrl: "https://github.com/ChinmmayVShastrry/ai-resume-analyzer",
   },
   {
     title: "DocuMind — Enterprise RAG",
@@ -379,7 +379,7 @@ export const projects = [
     alt: "DocuMind enterprise RAG system preview",
     tags: ["RAG", "RBAC", "ChromaDB", "Audit Trail", "OpenAI"],
     liveUrl: "",
-    sourceUrl: "https://github.com/ChinmayShastry/enterprise-rag-system",
+    sourceUrl: "https://github.com/ChinmmayVShastrry/enterprise-rag-system",
   },
   {
     title: "Pneumonia Detection from X-Rays",
@@ -389,7 +389,7 @@ export const projects = [
     alt: "Pneumonia detection from chest X-rays project preview",
     tags: ["TensorFlow", "Transfer Learning", "ResNet50", "Medical Imaging"],
     liveUrl: "",
-    sourceUrl: "https://github.com/ChinmayShastry/pneumonia-classification",
+    sourceUrl: "https://github.com/ChinmmayVShastrry/pneumonia-classification",
   },
   {
     title: "Machine Learning From Scratch",
@@ -399,7 +399,7 @@ export const projects = [
     alt: "Machine learning from scratch project preview",
     tags: ["NumPy", "Gradient Descent", "scikit-learn", "Fundamentals"],
     liveUrl: "",
-    sourceUrl: "https://github.com/ChinmayShastry/knn-from-scratch",
+    sourceUrl: "https://github.com/ChinmmayVShastrry/knn-from-scratch",
   },
   {
     title: "Classical ML & Analytics",
@@ -409,7 +409,7 @@ export const projects = [
     alt: "Classical machine learning and analytics projects preview",
     tags: ["XGBoost", "Classification", "EDA", "NLP", "Pandas"],
     liveUrl: "",
-    sourceUrl: "https://github.com/ChinmayShastry?tab=repositories",
+    sourceUrl: "https://github.com/ChinmmayVShastrry?tab=repositories",
   },
 ];
 
@@ -525,22 +525,22 @@ export const contact = {
   socials: [
     {
       label: "GitHub",
-      href: "https://github.com/ChinmayShastry",
+      href: "https://github.com/ChinmmayVShastrry",
       icon: Github,
     },
     {
       label: "LinkedIn",
-      href: "https://www.linkedin.com/in/chinmayshastry/",
+      href: "https://www.linkedin.com/in/chinmmay/",
       icon: Linkedin,
     },
     {
       label: "X / Twitter",
-      href: "https://x.com/ChinmayShastry",
+      href: "https://x.com/Chinmmay6",
       icon: Twitter,
     },
     {
       label: "Email",
-      href: "mailto:chinmay.v.shastry@gmail.com",
+      href: "mailto:chinmmayvshastrry@gmail.com",
       icon: Mail,
     },
   ],

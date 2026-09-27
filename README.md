@@ -64,7 +64,7 @@ The three testimonials in `data/content.js` are **clearly-marked placeholders** 
    git add .
    git commit -m "Initial portfolio"
    git branch -M main
-   git remote add origin https://github.com/ChinmayShastry/portfolio.git
+   git remote add origin https://github.com/ChinmmayVShastrry/portfolio.git
    git push -u origin main
    ```
 2. Go to [vercel.com](https://vercel.com) and sign in **with your GitHub account**
