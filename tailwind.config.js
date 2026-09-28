@@ -36,6 +36,9 @@ module.exports = {
   // Dark mode is toggled by adding/removing the `dark` class on <html>
   // (see components/ThemeToggle.jsx and the inline script in app/layout.js)
   darkMode: "class",
+  // Hover styles only apply on devices that can actually hover, so a tap
+  // on a phone doesn't leave a card stuck in its lifted state.
+  future: { hoverOnlyWhenSupported: true },
   theme: {
     extend: {
       colors: {
@@ -68,6 +71,10 @@ module.exports = {
       boxShadow: {
         soft: "0 2px 16px rgba(56, 49, 42, 0.07)",
         lift: "0 14px 34px rgba(56, 49, 42, 0.14)",
+      },
+      transitionTimingFunction: {
+        // Strong ease-out: responds instantly, settles gently
+        out: "cubic-bezier(0.23, 1, 0.32, 1)",
       },
     },
   },

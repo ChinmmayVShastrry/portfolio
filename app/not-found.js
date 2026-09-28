@@ -11,16 +11,16 @@ export default function NotFound() {
         This page wandered off
       </h1>
       <p className="mt-3 max-w-md text-cocoa dark:text-latte">
-        The link you followed doesn&apos;t exist — but there&apos;s plenty to
-        see back on the main page.
+        The link you followed doesn&apos;t exist. There&apos;s plenty to see
+        back on the main page.
       </p>
       <a
         href="/"
-        className="group mt-8 inline-flex items-center gap-2 rounded-full bg-terracotta px-7 py-3.5 font-medium text-cream shadow-soft transition-all hover:-translate-y-0.5 hover:bg-terracotta-dark hover:shadow-lift"
+        className="btn-primary group mt-8"
       >
         <ArrowLeft
           size={18}
-          className="transition-transform group-hover:-translate-x-1"
+          className="transition-transform duration-200 ease-out group-hover:-translate-x-1"
           aria-hidden="true"
         />
         Back home

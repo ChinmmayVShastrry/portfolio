@@ -1,6 +1,7 @@
 import { Figtree, Fraunces } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
-import { siteMeta, profile, contact } from "@/data/content";
+import { siteMeta, profile, contact, projects } from "@/data/content";
 import ScrollProgress from "@/components/ScrollProgress";
 
 /* Typography:
@@ -106,6 +107,27 @@ const personSchema = {
     .map((social) => social.href),
 };
 
+/* The projects, as structured data, so search engines can connect each
+   repo and live demo back to you. Built from the same content config. */
+const projectsSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: `Projects by ${profile.name}`,
+  itemListElement: projects.map((project, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    item: {
+      "@type": "SoftwareSourceCode",
+      name: project.subtitle ? `${project.title}: ${project.subtitle}` : project.title,
+      description: project.description,
+      keywords: project.tags.join(", "),
+      author: { "@type": "Person", name: profile.name, url: siteMeta.url },
+      ...(project.sourceUrl ? { codeRepository: project.sourceUrl } : {}),
+      ...(project.liveUrl ? { url: project.liveUrl } : {}),
+    },
+  })),
+};
+
 export default function RootLayout({ children }) {
   return (
     <html
@@ -119,6 +141,10 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(projectsSchema) }}
+        />
       </head>
       <body className="font-sans">
         {/* Keyboard users can jump straight past the nav.
@@ -128,6 +154,11 @@ export default function RootLayout({ children }) {
         </a>
         <ScrollProgress />
         {children}
+        {/* Free, cookie-less visitor counts. Collects nothing until Web
+            Analytics is switched on for this project in the Vercel
+            dashboard (Project → Analytics → Enable). Only included in
+            Vercel builds, where its script actually exists. */}
+        {process.env.VERCEL && <Analytics />}
       </body>
     </html>
   );

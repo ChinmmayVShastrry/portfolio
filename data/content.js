@@ -12,18 +12,7 @@
  * ════════════════════════════════════════════════════════════════
  */
 
-import {
-  Bot,
-  Database,
-  BrainCircuit,
-  BarChart3,
-  Rocket,
-  CandlestickChart,
-  Github,
-  Linkedin,
-  Twitter,
-  Mail,
-} from "lucide-react";
+import { Github, Linkedin, Twitter, Mail } from "lucide-react";
 
 /* ────────────────────────────────────────────────
  *  SEO / social sharing tags (used in app/layout.js)
@@ -31,7 +20,7 @@ import {
 export const siteMeta = {
   title: "Chinmmay V Shastrry — AI / GenAI Engineer",
   description:
-    "AI/GenAI Engineer in Bengaluru building hybrid RAG pipelines, agentic LLM workflows, and deep-learning systems — with five years in financial markets behind the technical decisions.",
+    "AI/GenAI Engineer in Bengaluru building hybrid RAG pipelines, agentic LLM workflows and deep-learning systems, with five years in financial markets behind the technical decisions.",
   url: "https://chinmmayportfolio.vercel.app",
   // 1200×630 preview card shown when the site is shared on LinkedIn,
   // X, WhatsApp etc. Regenerate it if the name or tagline changes.
@@ -65,18 +54,25 @@ export const profile = {
   // Set to "" to hide it (e.g. once you've accepted a role).
   availability: "Available to join immediately",
 
-  // The typing/rotating tagline in the hero. These deliberately span
-  // all three role families you're targeting.
-  roles: [
-    "AI / GenAI Engineer",
-    "Data Scientist",
-    "Data Analyst",
-    "RAG & LLM Systems Builder",
-  ],
+  // The role families you're targeting. The first is used as your job
+  // title in search results; the hero shows them as one quiet line.
+  roles: ["AI / GenAI Engineer", "Data Scientist", "Data Analyst"],
 
   // One-liner under the tagline
   intro:
     "I build RAG systems, LLM applications and machine-learning models, and I came to them after five years managing investment portfolios. Finance and AI is the intersection I want to keep working in.",
+
+  // A short, dated "what I'm doing right now" line under the intro.
+  // Update the date whenever you change the text, so it never goes stale.
+  // Set to null to hide it.
+  now: {
+    date: "September 2026",
+    text: "Building a multi-agent trading system, and learning MCP and FastAPI alongside it.",
+  },
+
+  // Portrait shown in the hero
+  photo: "/images/profile.jpg",
+  photoAlt: "Portrait of Chinmmay V Shastrry",
 
   // Résumé download link (file lives in /public). Set to "" to hide the button.
   resumeUrl: "/Chinmmay_V_Shastrry_Resume.pdf",
@@ -86,10 +82,10 @@ export const profile = {
  *  Navbar links — each href must match a section id
  * ──────────────────────────────────────────────── */
 export const navLinks = [
+  { label: "Work", href: "#projects" },
   { label: "About", href: "#about" },
-  { label: "Why Me", href: "#why" },
-  { label: "What I Do", href: "#skills" },
-  { label: "Projects", href: "#projects" },
+  { label: "Why me", href: "#why" },
+  { label: "Toolkit", href: "#skills" },
   { label: "Journey", href: "#experience" },
   { label: "Contact", href: "#contact" },
 ];
@@ -98,16 +94,13 @@ export const navLinks = [
  *  About section
  * ──────────────────────────────────────────────── */
 export const about = {
-  photo: "/images/profile.jpg",
-  photoAlt: "Portrait of Chinmmay V Shastrry",
+  title: "From client portfolios to AI systems",
 
-  // Each string renders as its own paragraph
+  // Each string renders as its own paragraph. Two is the sweet spot:
+  // enough for the story, short enough that people read to the end.
   bio: [
-    "I'm Chinmmay V Shastrry, an AI engineer in Bengaluru. Before this I ran my own financial practice for about five years — portfolio management for a client list that passed fifty, an AngelOne sub-brokership, ITR filing, and a Tata AIA insurance agency. Whatever the client needed, basically. A lot of it came down to sitting with someone until they were comfortable placing their own order and setting a stop loss, which is good training for explaining complicated things to people who are nervous.",
-    "In January 2025 I moved into technology. I don't think of it as leaving finance — I still think in it — I just wanted better tools for the problems I'd already spent five years on. It was early enough that AI wasn't the noise it is now, which in hindsight I'm glad about.",
-    "I did the DataMites AI engineering programme at their Marathahalli branch, then an eight-month internship at Rubixe from October 2025 to June 2026, building computer vision and NLP systems — including a sign-language recogniser that reached 99.87% accuracy across 24 gestures. From there I worked forward through transformers into LLMs, RAG, and now agentic systems, which is where most of my own projects sit. Three are live and you can click through from this page.",
-    "None of it came easily at first. Coming from finance, the coding environment took about a year and a half before it felt genuinely comfortable, and the concepts underneath it — machine learning, deep learning, transformers, retrieval, agents — took real work to get straight.",
-    "What I got from that stretch is a realistic sense of what learning something hard actually costs, and I've kept paying it. Right now I'm building agentic AI applications while working through MCP, FastAPI, Flask, Docker and Kubernetes — the bigger build is a multi-agent, multi-layer trading bot, which puts finance and AI in the same project. I still check the markets most mornings.",
+    "I'm Chinmmay, an AI engineer in Bengaluru. Before this I ran my own financial practice for about five years: portfolio management for more than fifty clients, an AngelOne sub-brokership, ITR filing and a Tata AIA insurance agency. A lot of that work was sitting with someone until they were comfortable placing their own order and setting a stop loss, which turned out to be good training for explaining complicated things to people who are nervous.",
+    "In January 2025 I moved into technology. I didn't leave finance behind; I wanted better tools for the problems I'd already spent five years on. I did the DataMites AI engineering programme in Marathahalli, then an eight-month internship at Rubixe building computer vision and NLP systems, including a sign-language recogniser that reached 99.87% accuracy across 24 gestures. Coming from finance, it took about a year and a half before the code felt comfortable. Since then I've worked forward through transformers into LLMs, RAG and agentic systems, which is where most of my own projects sit. I still check the markets most mornings.",
   ],
 
   // Quick facts / stats shown next to the bio
@@ -131,11 +124,11 @@ export const whyHireMe = {
   reasons: [
     {
       title: "I bring a domain most AI engineers don't have",
-      body: "Five years of managing real client money — portfolio management, a sub-brokership, an insurance agency — means nobody has to explain what a drawdown is, why a compliance document can't be loosely paraphrased, or what an analyst actually does all day. If your problem touches money, I've already lived in it.",
+      body: "Five years of managing real client money, across portfolio management, a sub-brokership and an insurance agency, means nobody has to explain to me what a drawdown is, why a compliance document can't be loosely paraphrased, or what an analyst actually does all day. If your problem touches money, I've already lived in it.",
     },
     {
       title: "I've actually shipped things",
-      body: "Three of my projects are live right now with public links, and the code is on GitHub. You can click through and judge them yourself before we ever get on a call.",
+      body: "Four of my projects are live right now with public links, and the code is on GitHub. You can click through and judge them yourself before we ever get on a call.",
     },
     {
       title: "I can explain the complicated part",
@@ -143,57 +136,14 @@ export const whyHireMe = {
     },
     {
       title: "I adapt, and I've already proved it once",
-      body: "I came into this from finance with no coding background and no CS degree, and I'm now shipping AI systems. So when a stack has something I haven't used, it's a ramp-up I've done before. Right now that's MCP, FastAPI, Docker and Kubernetes, in my own time.",
+      body: "I came into this from finance with no coding background and no CS degree, and I'm now shipping AI systems. When a stack has something I haven't used, it's a ramp-up I've done before. Right now that's MCP, FastAPI, Docker and Kubernetes, in my own time.",
     },
   ],
 };
 
 /* ────────────────────────────────────────────────
- *  "What I Do" service cards
- *  icon: any icon imported from lucide-react at the top of this file
- * ──────────────────────────────────────────────── */
-export const services = [
-  {
-    icon: Bot,
-    title: "GenAI & LLM Engineering",
-    description:
-      "Agentic workflows, prompt and context engineering, and multi-model pipelines built with LangChain, LangGraph, and the major provider APIs.",
-  },
-  {
-    icon: Database,
-    title: "RAG & Retrieval Systems",
-    description:
-      "Hybrid retrieval that combines BM25 with dense semantic search and CrossEncoder reranking. I use RAGAS scores to check the retrieval is actually improving.",
-  },
-  {
-    icon: BrainCircuit,
-    title: "Machine & Deep Learning",
-    description:
-      "End-to-end pipelines across NLP and computer vision — CNNs, transfer learning, and gradient boosting, owned from preprocessing to evaluation.",
-  },
-  {
-    icon: BarChart3,
-    title: "Data Analysis & Insight",
-    description:
-      "Feature engineering, time-series work and cohort analysis, plus dashboards in Power BI and Tableau that are built to answer a question someone actually asked.",
-  },
-  {
-    icon: Rocket,
-    title: "Deployment & Delivery",
-    description:
-      "Getting models in front of real users — Streamlit Cloud, Gradio, and HuggingFace Spaces, with caching, retries, and logging that hold up in use.",
-  },
-  {
-    icon: CandlestickChart,
-    title: "Finance × AI",
-    description:
-      "Equity markets, derivatives and portfolio risk, learned over five years of managing real money for clients. It means I can read a finance problem before I start modelling it.",
-  },
-];
-
-/* ────────────────────────────────────────────────
- *  Skills, grouped by category.
- *  `note` renders as a small caption under the group.
+ *  Toolkit, grouped by category. Each group renders as one row.
+ *  `note` renders as a small caption under the row.
  * ──────────────────────────────────────────────── */
 export const skillGroups = [
   {
@@ -287,16 +237,16 @@ export const skillGroups = [
       "GitHub Copilot",
       "Gemini CLI",
     ],
-    note: "Claude, Claude Code and Cowork are my daily drivers; I've worked across the rest of the agentic-coding landscape too.",
+    note: "Claude, Claude Code and Cowork are my daily drivers; I've used the rest on real work too.",
   },
 ];
 
-/* Currently learning — shown as a separate, clearly-labelled group.
+/* Currently learning: shown as one separate line under the toolkit.
    Keeping this honest and visible reads as momentum, and it's the
    first thing to promote into skillGroups once you've shipped with it. */
 export const learning = {
   title: "Currently growing into",
-  note: "Actively building with these right now — listed here rather than above until they're in something I've shipped.",
+  note: "Building with these now; they move up once they're in something I've shipped.",
   items: [
     "FastAPI",
     "Flask",
@@ -312,51 +262,57 @@ export const learning = {
 
 /* ────────────────────────────────────────────────
  *  Projects
- *  - liveUrl / sourceUrl: set to "" to hide that button
- *  - featured: true adds a small badge on the card
+ *  - featured: true shows the project as a large row with a screenshot
+ *    (needs `image` + `alt`). Everything else goes in the compact grid.
+ *  - liveUrl / sourceUrl: set to "" to hide that link
+ *  - status: shows a small badge (e.g. "In progress")
+ *  - caseStudy: slug of an entry in `caseStudies` below; adds a
+ *    "Read the case study" link
  * ──────────────────────────────────────────────── */
 export const projects = [
   {
     featured: true,
-    title: "StoxAI — Indian Market Research",
+    title: "StoxAI",
+    subtitle: "Indian market research assistant",
     description:
-      "Research assistant for Nifty 250 stocks, commodities and indices. Pulls live price data and financial news, runs LLM sentiment analysis across it, and answers follow-up questions through a tool-calling chatbot that can compare assets in plain English. Built as a research companion, so it surfaces catalysts and risks and leaves the call to the investor.",
-    image: "/images/projects/finance-assistant.svg",
-    alt: "StoxAI Indian market research assistant preview",
+      "Research assistant for Nifty 250 stocks, commodities and indices. It pulls live price data and financial news, runs LLM sentiment analysis across it, and answers follow-up questions through a tool-calling chatbot that can compare assets in plain English. It's built as a research companion, so it surfaces catalysts and risks and leaves the call to the investor.",
+    image: "/images/shots/stoxai.webp",
+    alt: "StoxAI's analysis screen: a sidebar to pick a stock and report sections, and cards for technicals, sentiment, long-term analysis and upcoming factors",
     tags: ["LLM", "Finance", "Tool Calling", "GPT-4o-mini", "Streamlit"],
     liveUrl: "https://stoxai-market.streamlit.app/",
     sourceUrl: "https://github.com/ChinmmayVShastrry/StoxAI",
   },
   {
     featured: true,
-    title: "RAG Atlas — Interactive RAG Explainer",
+    title: "RAG Atlas",
+    subtitle: "Six RAG architectures, one question, every stage visible",
     description:
-      "A walkthrough of six RAG architectures — naive, advanced, agentic, multi-hop, graph and hierarchical — run against the same corpus and question so the architecture is the only thing that changes. Nothing is simulated: real chunking, 1536-dimension embeddings, cosine ranking, a cross-encoder, streamed generation, and a second model grading the first.",
-    image: "/images/projects/rag-atlas.svg",
-    alt: "RAG Atlas interactive RAG explainer preview",
+      "An interactive walkthrough of six RAG architectures (naive, advanced, agentic, multi-hop, graph and hierarchical) run against the same corpus and question, so the architecture is the only thing that changes. Nothing is simulated: real chunking, 1536-dimension embeddings, cosine ranking, a cross-encoder, streamed generation, and a second model grading the first.",
+    image: "/images/shots/rag-atlas.webp",
+    alt: "RAG Atlas: numbered pipeline stages from corpus to guardrails across the top, an architecture switcher, and the first stage showing the source documents",
     tags: ["RAG", "Architectures", "Evaluation", "Guardrails", "Embeddings"],
     liveUrl: "https://rag-atlas-learn.vercel.app",
     sourceUrl: "https://github.com/ChinmmayVShastrry/rag-atlas",
+    caseStudy: "rag-atlas",
   },
   {
-    title: "DocChat AI — Hybrid RAG",
+    featured: true,
+    title: "DocChat AI",
+    subtitle: "Hybrid RAG over your own documents",
     description:
-      "Document intelligence combining BM25 keyword retrieval, dense semantic search, and CrossEncoder reranking — lifting RAGAS context precision from ~78% to 100% on the evaluation set. Multi-document support with token-level streaming.",
-    image: "/images/projects/docchat.svg",
-    alt: "DocChat AI hybrid RAG project preview",
+      "Document intelligence combining BM25 keyword retrieval, dense semantic search and CrossEncoder reranking, which lifted RAGAS context precision from about 78% to 100% on the evaluation set. It handles several documents at once and streams answers token by token, with source citations.",
+    image: "/images/shots/docchat.webp",
+    alt: "DocChat AI's start screen: a sidebar for an API key and document upload, and a chat box for questions about the documents",
     tags: ["RAG", "LangChain", "FAISS", "BM25", "Reranking"],
     liveUrl: "https://docchat-ai.streamlit.app",
     sourceUrl: "https://github.com/ChinmmayVShastrry/docchat-ai",
   },
   {
-    // `status` renders an "in progress" badge instead of the Featured one.
-    // Remove it and add liveUrl/sourceUrl once the repo is public.
+    // Remove `status` and add liveUrl/sourceUrl once the repo is public.
     status: "In progress",
     title: "Multi-Agent Trading System",
     description:
-      "A layered multi-agent system for market analysis — separate agents handling market data, signal generation, risk checks and execution logic, coordinated rather than run as one monolith. This is the build where the finance background and the agentic AI work meet.",
-    image: "/images/projects/trading-bot.svg",
-    alt: "Multi-agent trading system project preview",
+      "A layered multi-agent system for market analysis, with separate agents for market data, signal generation, risk checks and execution logic, coordinated rather than run as one monolith. It's the build where the finance background and the agentic AI work meet.",
     tags: ["Agentic AI", "Multi-Agent", "Finance", "Python"],
     liveUrl: "",
     sourceUrl: "",
@@ -364,29 +320,24 @@ export const projects = [
   {
     title: "AI Résumé Analyzer",
     description:
-      "ATS-style résumé scoring with skill-gap analysis powered by sentence-transformers, plus AI rewriting suggestions. Multi-step reasoning (parse → extract → analyse → output) produces role-specific feedback through a live scoring dashboard.",
-    image: "/images/projects/resume-analyzer.svg",
-    alt: "AI résumé analyzer project preview",
-    tags: ["NLP", "Sentence Transformers", "ATS", "Agentic AI", "Streamlit"],
+      "ATS-style résumé scoring with skill-gap analysis powered by sentence-transformers, plus AI rewriting suggestions. Multi-step reasoning (parse, extract, analyse, output) produces role-specific feedback through a live scoring dashboard.",
+    tags: ["NLP", "Sentence Transformers", "ATS", "Streamlit"],
     liveUrl: "https://resume-aianalyzer.streamlit.app/",
     sourceUrl: "https://github.com/ChinmmayVShastrry/ai-resume-analyzer",
   },
   {
-    title: "DocuMind — Enterprise RAG",
+    title: "DocuMind",
+    subtitle: "Enterprise RAG",
     description:
-      "A RAG assistant built for documents where a wrong answer has consequences: product manuals and HR/compliance policy. Answers are drawn only from the source documents and cite the exact page, role-based access controls what each user can retrieve, and every query is logged for audit.",
-    image: "/images/projects/enterprise-rag.svg",
-    alt: "DocuMind enterprise RAG system preview",
-    tags: ["RAG", "RBAC", "ChromaDB", "Audit Trail", "OpenAI"],
+      "A RAG assistant for documents where a wrong answer has consequences: product manuals and HR/compliance policy. Answers come only from the source documents and cite the exact page, role-based access controls what each user can retrieve, and every query is logged for audit.",
+    tags: ["RAG", "RBAC", "ChromaDB", "Audit Trail"],
     liveUrl: "",
     sourceUrl: "https://github.com/ChinmmayVShastrry/enterprise-rag-system",
   },
   {
     title: "Pneumonia Detection from X-Rays",
     description:
-      "Chest X-ray classification comparing a from-scratch CNN against VGG16 and ResNet50 transfer learning. ResNet50 came out best at 88% accuracy and 0.95 AUC. The more useful finding was that the scratch CNN's apparently perfect 1.00 sensitivity came from flagging almost every image positive, at 0.00 specificity — which is why the models are scored on sensitivity and specificity separately rather than accuracy alone.",
-    image: "/images/projects/computer-vision.svg",
-    alt: "Pneumonia detection from chest X-rays project preview",
+      "Chest X-ray classification comparing a from-scratch CNN against VGG16 and ResNet50 transfer learning. ResNet50 came out best at 88% accuracy and 0.95 AUC. The more useful finding was that the scratch CNN's apparently perfect 1.00 sensitivity came from flagging almost every image positive, at 0.00 specificity, which is why the models are scored on sensitivity and specificity separately.",
     tags: ["TensorFlow", "Transfer Learning", "ResNet50", "Medical Imaging"],
     liveUrl: "",
     sourceUrl: "https://github.com/ChinmmayVShastrry/pneumonia-classification",
@@ -394,22 +345,132 @@ export const projects = [
   {
     title: "Machine Learning From Scratch",
     description:
-      "K-Nearest Neighbours and linear regression implemented from first principles in NumPy — gradient descent, loss tracking and feature scaling written by hand, then benchmarked against scikit-learn to confirm the implementations were correct. Built to understand the mechanics underneath the libraries.",
-    image: "/images/projects/ml-from-scratch.svg",
-    alt: "Machine learning from scratch project preview",
-    tags: ["NumPy", "Gradient Descent", "scikit-learn", "Fundamentals"],
+      "K-Nearest Neighbours and linear regression implemented from first principles in NumPy, with gradient descent, loss tracking and feature scaling written by hand, then benchmarked against scikit-learn to confirm the implementations were correct.",
+    tags: ["NumPy", "Gradient Descent", "scikit-learn"],
     liveUrl: "",
     sourceUrl: "https://github.com/ChinmmayVShastrry/knn-from-scratch",
   },
   {
     title: "Classical ML & Analytics",
     description:
-      "A run of applied machine-learning projects across business and NLP problems: customer transaction prediction, Portuguese bank marketing response, employee performance analysis, flight price prediction, fake-news detection and Twitter sentiment classification.",
-    image: "/images/projects/predictive-modeling.svg",
-    alt: "Classical machine learning and analytics projects preview",
-    tags: ["XGBoost", "Classification", "EDA", "NLP", "Pandas"],
+      "Applied machine-learning projects across business and NLP problems: customer transaction prediction, Portuguese bank marketing response, employee performance analysis, flight price prediction, fake-news detection and Twitter sentiment classification.",
+    tags: ["XGBoost", "Classification", "EDA", "NLP"],
     liveUrl: "",
     sourceUrl: "https://github.com/ChinmmayVShastrry?tab=repositories",
+  },
+];
+
+/* "Recently pushed" line under the projects: your latest public GitHub
+   repos, refreshed automatically once a day. `exclude` hides repos by
+   name (this site's own repo, anything private-in-spirit). Set
+   `show: false` to hide the line. */
+export const githubActivity = {
+  show: true,
+  count: 3,
+  exclude: ["portfolio"],
+};
+
+/* ────────────────────────────────────────────────
+ *  Case studies: one page each, at /projects/<slug>.
+ *  Every figure here comes from the project's own README, so keep it
+ *  in step with the repo if the numbers change.
+ * ──────────────────────────────────────────────── */
+export const caseStudies = [
+  {
+    slug: "rag-atlas",
+    title: "RAG Atlas",
+    subtitle: "Six RAG architectures, one question, every stage visible",
+    summary:
+      "An interactive walkthrough of six retrieval-augmented generation architectures, plus evaluation and guardrails, where the architecture is the only thing that changes.",
+    liveUrl: "https://rag-atlas-learn.vercel.app",
+    sourceUrl: "https://github.com/ChinmmayVShastrry/rag-atlas",
+    intro: [
+      "RAG Atlas takes ten plain text files, one question and a switcher. You can ask the same thing of each architecture and see where the answers diverge, or run all six at once and compare them side by side.",
+      "Nothing on the page is simulated. The chunking, the 1536-dimensional embeddings, the cosine ranking, the cross-encoder, the streamed generation and the second model grading the first are all real, and every slider is wired to live output.",
+    ],
+    facts: [
+      { value: "6", label: "Architectures on one corpus" },
+      { value: "10", label: "Source documents" },
+      { value: "~$0.002", label: "To run all six on one question" },
+      { value: "553", label: "Entities in the graph index" },
+    ],
+    architectures: {
+      heading: "The six architectures",
+      note: "Corpus, chunking, generation, evaluation and guardrails are identical in all six. Only the retrieval middle changes, so the architecture is the one variable.",
+      rows: [
+        { name: "Naive", middle: "embed → rank → stuff", purpose: "The original pattern, and still the right default." },
+        { name: "Advanced", middle: "HyDE → hybrid → rerank", purpose: "Same shape, smarter at each step." },
+        { name: "Agentic", middle: "route → grade → correct → critique", purpose: "Checks its own retrieval and its own answer." },
+        { name: "Multi-hop", middle: "decompose → chain → synthesise", purpose: "Questions no single passage can answer." },
+        { name: "Graph", middle: "extract → graph → traverse", purpose: "Indexes relationships instead of text." },
+        { name: "Hierarchical", middle: "cluster → summarise → route", purpose: "RAPTOR: retrieval at the right level of detail." },
+      ],
+    },
+    sections: [
+      {
+        heading: "Chunking you can watch",
+        // A looping screen recording (played like a GIF) with a still poster
+        video: "/images/case-study/chunking.mp4",
+        image: "/images/case-study/chunking-poster.webp",
+        width: 980,
+        height: 582,
+        alt: "The chunk size slider sweeping from 1,200 characters down to 300 and back, while one document splits from 8 chunks into 32 and coloured bands over the source text re-flow to match",
+        body: [
+          "One slider, nothing else touched. As chunk size drops from 1,200 characters to 300, one document splits from 8 chunks into 32 and the coloured bands over the source text redraw to match. Striped regions are overlap: text that belongs to two chunks at once, which is what rescues a fact that lands on a boundary.",
+          "This part runs entirely in the browser, so it costs nothing and has no latency.",
+        ],
+      },
+      {
+        heading: "All six on the same question",
+        image: "/images/case-study/comparison.webp",
+        width: 2276,
+        height: 744,
+        alt: "The same question run through all six architectures side by side, each card showing its answer, faithfulness score, passages used, calls made, cost and elapsed time",
+        body: [
+          "Asked \"at what temperature does first crack happen?\", five architectures give the same answer and score 100 on faithfulness. Graph RAG reports that its context doesn't cover the question, because an entity graph is the wrong tool for a single numeric lookup.",
+          "A full comparison costs about $0.002 across 20 calls and takes roughly half a minute. It's opt-in and collapsed by default, because it's the only thing on the site that spends money without being asked for a specific stage.",
+        ],
+      },
+      {
+        heading: "Three chunking strategies, same text",
+        image: "/images/case-study/chunking-strategies.webp",
+        width: 2292,
+        height: 452,
+        alt: "Three chunking strategies side by side across ten documents: fixed windows produce 110 chunks of which 94 start mid-word, while sentence-aware (112) and recursive (118) produce none",
+        body: [
+          "Same corpus, same size and overlap, three splitters. Fixed windows produce 110 chunks and 94 of them begin mid-word. Sentence-aware and recursive splitting produce none.",
+        ],
+      },
+      {
+        heading: "Guardrails that fire as you type",
+        image: "/images/case-study/guardrails.webp",
+        width: 1716,
+        height: 1592,
+        alt: "The guardrails stage on a question containing an email address and a credit card number: the PII rule and the injection classifier both block it, while the injection-pattern rule and moderation pass",
+        body: [
+          "Deterministic rules run in the browser on every keystroke, and the card detector runs a Luhn checksum so it doesn't trip on every long number. Model-based moderation and an injection classifier sit behind a button, because those spend tokens.",
+        ],
+      },
+    ],
+    details: {
+      heading: "Details that took the most care",
+      items: [
+        "The PCA is real. Power iteration finds the top two components without building a 1536 × 1536 covariance matrix, and the query goes through the same fitted transform, so distance on screen means something.",
+        "Reranking uses a genuine cross-encoder running in the browser (about 21 MB, on WebGPU or WASM). Its scores are roughly calibrated, so unlike cosine similarity they support an absolute relevance floor.",
+        "The graph index has 553 entities and 546 relationships, and 53 of those entities bridge two or more documents. That's the join vector search can't make.",
+        "The RAPTOR tree goes 106 leaves → 27 → 7 → 2. Ask for a temperature and retrieval collapses onto leaves; ask what the documents share and it returns a node from every level.",
+        "The shared demo key is protected on the server: submitted text has to be a genuine excerpt of the bundled corpus, the server builds the prompt itself, and every IP is rate-limited per hour.",
+      ],
+    },
+    tryIt: {
+      heading: "Things worth trying",
+      items: [
+        "Ask \"What temperature does Marta's stoneware mature at?\" under Naive, then under Multi-hop. Naive can't answer it, because no single chunk contains both halves.",
+        "Under Agentic, ask \"Who won the 1998 FIFA World Cup?\" and watch the router decline before spending anything.",
+        "Push the temperature to 1.2, regenerate, then re-score, and watch faithfulness fall.",
+        "Switch off the coffee document, then ask about first crack. The refusal is the correct behaviour.",
+      ],
+    },
   },
 ];
 
@@ -422,7 +483,7 @@ export const timeline = [
     type: "work",
     title: "AI Engineer Intern",
     org: "Rubixe AI Solutions",
-    period: "Oct 2025 — Jun 2026",
+    period: "Oct 2025 – Jun 2026",
     location: "Bengaluru, India",
     description:
       "Built and deployed end-to-end ML pipelines across computer vision and NLP, delivering three production-style systems. Handled the full model lifecycle from preprocessing through training, tuning and evaluation, and wrote the technical documentation covering performance, business impact and deployment.",
@@ -431,12 +492,12 @@ export const timeline = [
     type: "education",
     title: "Fintech Programme",
     org: "IIM Bangalore (IIMBx)",
-    period: "2025 — Sep 2026 (expected)",
+    period: "2025 – Sep 2026 (expected)",
     location: "Online",
     // TODO: this isn't on your current résumé — either add it there or
     // remove this entry, so the two documents agree.
     description:
-      "Deepening financial domain expertise — fintech strategy, market structure, and the commercial side of applied AI.",
+      "Deepening my financial domain knowledge: fintech strategy, market structure, and the commercial side of applied AI.",
   },
   {
     type: "certification",
@@ -454,7 +515,7 @@ export const timeline = [
     period: "2025",
     location: "Bengaluru, India",
     description:
-      "Intensive offline professional programme covering the applied AI engineering stack — from classical machine learning through deep learning and deployment.",
+      "Intensive offline professional programme covering the applied AI engineering stack, from classical machine learning through deep learning and deployment.",
   },
   {
     type: "education",
@@ -463,16 +524,16 @@ export const timeline = [
     period: "Graduated Feb 2025",
     location: "India",
     description:
-      "Graduated with 81.43% — financial accounting, corporate finance, and quantitative analysis.",
+      "Graduated with 81.43%, covering financial accounting, corporate finance and quantitative analysis.",
   },
   {
     type: "work",
     title: "Portfolio Manager & Financial Advisor",
     org: "Independent / Freelance",
-    period: "2019 — 2024",
+    period: "2019 – 2024",
     location: "Bengaluru, India",
     description:
-      "Ran an independent practice built around portfolio management — equity and derivatives for 50+ clients, using fundamental and technical analysis alongside options strategy. Held an AngelOne sub-brokership and a Tata AIA insurance agency alongside it, and handled market consultation, ITR filing, and teaching clients the practical side of trading (placing orders, stop losses, targets). Built Python and Excel workflows to screen positions and track downside risk.",
+      "Ran an independent practice built around portfolio management: equity and derivatives for 50+ clients, using fundamental and technical analysis alongside options strategy. Held an AngelOne sub-brokership and a Tata AIA insurance agency alongside it, and handled market consultation, ITR filing, and teaching clients the practical side of trading (placing orders, stop losses, targets). Built Python and Excel workflows to screen positions and track downside risk.",
   },
 ];
 
@@ -481,10 +542,10 @@ export const timeline = [
  *  Set `beyondWork = null` to hide the section entirely.
  * ──────────────────────────────────────────────── */
 export const beyondWork = {
-  eyebrow: "Beyond Work",
+  eyebrow: "Beyond work",
   title: "Twelve years of Hindustani classical",
   paragraphs: [
-    "I've been learning Hindustani classical vocal for twelve years, with the same Guruji throughout, and I'm still learning — it isn't the kind of thing that finishes.",
+    "I've been learning Hindustani classical vocal for twelve years, with the same Guruji throughout, and I'm still learning. It isn't the kind of thing that finishes.",
     "For about two and a half years I taught it as well. A hundred-odd students came through, the youngest four years old and the oldest sixty-five. You learn quickly that the same idea needs a completely different explanation for each person.",
   ],
   stats: [

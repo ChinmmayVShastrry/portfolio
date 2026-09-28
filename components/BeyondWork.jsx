@@ -1,5 +1,3 @@
-"use client";
-
 import { Music4 } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
@@ -9,8 +7,8 @@ import { beyondWork } from "@/data/content";
  * BeyondWork — the music section. Deliberately short and placed late,
  * after the technical case has been made.
  *
- * Stats render as plain values rather than using CountUp, because the
- * age range ("4–65") isn't a single number to animate.
+ * Stats are plain values rather than CountUp, because the age range
+ * ("4–65") isn't a single number to animate.
  *
  * Hidden entirely when `beyondWork` is null in data/content.js.
  */
@@ -18,47 +16,49 @@ export default function BeyondWork() {
   if (!beyondWork?.paragraphs?.length) return null;
 
   return (
-    <section id="beyond" className="px-5 py-24 sm:px-8">
-      <div className="mx-auto max-w-3xl">
-        <SectionHeading
-          eyebrow={beyondWork.eyebrow}
-          title={beyondWork.title}
-        />
-
-        <Reveal>
-          <div className="rounded-3xl border border-linen bg-sand/40 p-8 sm:p-10 dark:border-bark dark:bg-espresso/40">
+    <section
+      id="beyond"
+      className="bg-sand/50 px-5 py-20 sm:px-8 md:py-28 dark:bg-espresso/40"
+    >
+      <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-12 md:gap-12">
+        <div className="md:col-span-4">
+          <Reveal>
             <span
               aria-hidden="true"
-              className="mb-6 inline-flex rounded-2xl bg-terracotta/10 p-3.5 text-terracotta dark:bg-ember/15 dark:text-ember"
+              className="mb-5 inline-flex rounded-xl bg-terracotta/10 p-3 text-terracotta-dark dark:bg-ember/15 dark:text-ember"
             >
-              <Music4 size={24} />
+              <Music4 size={22} />
             </span>
+          </Reveal>
+          <SectionHeading eyebrow={beyondWork.eyebrow} title={beyondWork.title} className="" />
+        </div>
 
-            {beyondWork.paragraphs.map((paragraph, i) => (
-              <p
-                key={i}
-                className="mb-4 text-lg leading-relaxed text-cocoa last:mb-0 dark:text-latte"
-              >
+        <div className="md:col-span-8">
+          {beyondWork.paragraphs.map((paragraph, i) => (
+            <Reveal key={i} delay={0.08 * i}>
+              <p className="mb-6 max-w-[65ch] text-lg leading-relaxed text-cocoa dark:text-latte">
                 {paragraph}
               </p>
-            ))}
+            </Reveal>
+          ))}
 
-            {beyondWork.stats?.length > 0 && (
-              <dl className="mt-8 grid grid-cols-3 gap-4 border-t border-linen pt-6 dark:border-bark">
+          {beyondWork.stats?.length > 0 && (
+            <Reveal delay={0.16}>
+              <dl className="mt-4 grid grid-cols-3 border-t border-linen dark:border-bark">
                 {beyondWork.stats.map((stat) => (
-                  <div key={stat.label} className="flex flex-col text-center">
-                    <dt className="order-2 mt-1 text-xs leading-snug text-cocoa dark:text-latte">
+                  <div key={stat.label} className="flex flex-col pr-4 pt-5">
+                    <dt className="order-2 mt-1 text-sm leading-snug text-cocoa dark:text-latte">
                       {stat.label}
                     </dt>
-                    <dd className="font-display text-2xl font-semibold text-terracotta sm:text-3xl dark:text-ember">
+                    <dd className="tabular font-display text-3xl font-semibold text-terracotta sm:text-4xl dark:text-ember">
                       {stat.value}
                     </dd>
                   </div>
                 ))}
               </dl>
-            )}
-          </div>
-        </Reveal>
+            </Reveal>
+          )}
+        </div>
       </div>
     </section>
   );

@@ -1,63 +1,58 @@
-"use client";
-
 import { Briefcase, GraduationCap, Award } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import { timeline } from "@/data/content";
 
-const typeIcons = {
-  work: Briefcase,
-  education: GraduationCap,
-  certification: Award,
+const types = {
+  work: { icon: Briefcase, label: "Work" },
+  education: { icon: GraduationCap, label: "Education" },
+  certification: { icon: Award, label: "Certification" },
 };
 
 /**
- * Experience — vertical timeline of work, education, and
- * certifications. The icon for each entry is chosen by its
+ * Experience — a plain timeline: dates down the left, the entry on the
+ * right, a hairline between each. The icon comes from each entry's
  * `type` field in data/content.js.
  */
 export default function Experience() {
   return (
-    <section
-      id="experience"
-      className="bg-sand/50 px-5 py-24 sm:px-8 dark:bg-espresso/40"
-    >
-      <div className="mx-auto max-w-3xl">
+    <section id="experience" className="px-5 py-20 sm:px-8 md:py-28">
+      <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="Journey"
-          title="Experience & education"
+          title="Experience and education"
           description="How I got from managing portfolios to building AI systems."
         />
 
-        <ol className="relative border-l-2 border-linen pl-8 dark:border-bark">
+        <ol className="border-b border-linen dark:border-bark">
           {timeline.map((entry, i) => {
-            const Icon = typeIcons[entry.type] ?? Briefcase;
+            const type = types[entry.type] ?? types.work;
+            const Icon = type.icon;
             return (
-              <Reveal key={`${entry.title}-${entry.period}`} delay={0.06 * i}>
-                <li className="relative pb-12 last:pb-2">
-                  {/* Timeline dot */}
-                  <span
-                    aria-hidden="true"
-                    className="absolute -left-[3.05rem] top-0 flex h-10 w-10 items-center justify-center rounded-full border-2 border-linen bg-cream text-terracotta dark:border-bark dark:bg-night dark:text-ember"
-                  >
-                    <Icon size={17} />
-                  </span>
-
-                  <div className="rounded-2xl border border-linen bg-cream p-6 shadow-soft transition-transform hover:-translate-y-1 dark:border-bark dark:bg-night">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-amber dark:text-honey">
-                      {entry.period}
-                    </p>
-                    <h3 className="mt-1.5 font-display text-lg font-semibold">
-                      {entry.title}
-                    </h3>
-                    <p className="mt-0.5 text-sm font-medium text-terracotta dark:text-ember">
-                      {entry.org} · {entry.location}
-                    </p>
-                    <p className="mt-3 text-sm leading-relaxed text-cocoa dark:text-latte">
-                      {entry.description}
-                    </p>
-                  </div>
-                </li>
+              <Reveal
+                as="li"
+                key={`${entry.title}-${entry.period}`}
+                delay={0.04 * i}
+                className="grid gap-3 border-t border-linen py-7 md:grid-cols-[15rem_1fr] md:gap-8 dark:border-bark"
+              >
+                <div className="flex items-center gap-3 md:flex-col md:items-start md:gap-1.5">
+                  <p className="tabular text-sm font-semibold text-charcoal dark:text-parchment">
+                    {entry.period}
+                  </p>
+                  <p className="inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider text-cocoa dark:text-latte">
+                    <Icon size={13} aria-hidden="true" />
+                    {type.label}
+                  </p>
+                </div>
+                <div className="max-w-[65ch]">
+                  <h3 className="font-display text-xl font-semibold">{entry.title}</h3>
+                  <p className="mt-0.5 text-sm font-medium text-terracotta-dark dark:text-ember">
+                    {entry.org} · {entry.location}
+                  </p>
+                  <p className="mt-3 leading-relaxed text-cocoa dark:text-latte">
+                    {entry.description}
+                  </p>
+                </div>
               </Reveal>
             );
           })}

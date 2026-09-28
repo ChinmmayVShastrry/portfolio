@@ -19,7 +19,13 @@ import { useEffect, useRef, useState } from "react";
  *
  * The actual styles live in app/globals.css under `[data-reveal]`.
  */
-export default function Reveal({ children, delay = 0, y = 28, className = "" }) {
+export default function Reveal({
+  children,
+  delay = 0,
+  y = 16,
+  className = "",
+  as: Tag = "div",
+}) {
   const ref = useRef(null);
   const [shown, setShown] = useState(false);
 
@@ -68,8 +74,10 @@ export default function Reveal({ children, delay = 0, y = 28, className = "" }) 
     return cleanup;
   }, [shown]);
 
+  // `as` lets a list item reveal itself (<Reveal as="li">), so lists stay
+  // valid HTML instead of having a <div> between the <ol> and its items.
   return (
-    <div
+    <Tag
       ref={ref}
       data-reveal=""
       data-shown={shown ? "true" : "false"}
@@ -77,6 +85,6 @@ export default function Reveal({ children, delay = 0, y = 28, className = "" }) 
       className={className}
     >
       {children}
-    </div>
+    </Tag>
   );
 }
