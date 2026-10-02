@@ -49,6 +49,8 @@ export const profile = {
   // Cities you're open to working in — shown in the hero and in Contact.
   // Recruiters filter hard on location, which is why it appears twice.
   openToCities: ["Bengaluru", "Hyderabad", "Pune"],
+  // Also shown after the cities. Set to false to drop "Remote".
+  openToRemote: true,
 
   // Small pulsing badge at the top of the hero.
   // Set to "" to hide it (e.g. once you've accepted a role).
@@ -136,7 +138,7 @@ export const whyHireMe = {
     },
     {
       title: "I adapt, and I've already proved it once",
-      body: "I came into this from finance with no coding background and no CS degree, and I'm now shipping AI systems. When a stack has something I haven't used, it's a ramp-up I've done before. Right now that's MCP, FastAPI, Docker and Kubernetes, in my own time.",
+      body: "I came into this from finance with no coding background and no CS degree, and I'm now shipping AI systems. When a stack has something I haven't used, it's a ramp-up I've done before. It's also why generalist and founder's-office roles appeal to me, where the job is whatever the business needs that month. Right now my own ramp-up is MCP, FastAPI, Docker and Kubernetes.",
     },
   ],
 };
@@ -480,6 +482,19 @@ export const caseStudies = [
  * ──────────────────────────────────────────────── */
 export const timeline = [
   {
+    type: "education",
+    title: "FinTech Programme",
+    org: "IIMBx Digital Learning Foundation · IIM Bangalore",
+    period: "Nov 2025 – Oct 2026",
+    location: "Online",
+    // Optional photo shown beside the entry. Drop the file at this path
+    // (e.g. a picture from the valedictory at IIM Bangalore) and uncomment:
+    // photo: "/images/iimb.jpg",
+    // photoAlt: "Receiving the FinTech programme certificate at IIM Bangalore",
+    description:
+      "A nine-month online programme from the first cohort, finished with the certificate handed over at the valedictory on the IIM Bangalore campus. What I liked most was seeing finance and technology taught together, as if they belong together.",
+  },
+  {
     type: "work",
     title: "AI Engineer Intern",
     org: "Rubixe AI Solutions",
@@ -487,17 +502,6 @@ export const timeline = [
     location: "Bengaluru, India",
     description:
       "Built and deployed end-to-end ML pipelines across computer vision and NLP, delivering three production-style systems. Handled the full model lifecycle from preprocessing through training, tuning and evaluation, and wrote the technical documentation covering performance, business impact and deployment.",
-  },
-  {
-    type: "education",
-    title: "Fintech Programme",
-    org: "IIM Bangalore (IIMBx)",
-    period: "2025 – Sep 2026 (expected)",
-    location: "Online",
-    // TODO: this isn't on your current résumé — either add it there or
-    // remove this entry, so the two documents agree.
-    description:
-      "Deepening my financial domain knowledge: fintech strategy, market structure, and the commercial side of applied AI.",
   },
   {
     type: "certification",
@@ -547,6 +551,7 @@ export const beyondWork = {
   paragraphs: [
     "I've been learning Hindustani classical vocal for twelve years, with the same Guruji throughout, and I'm still learning. It isn't the kind of thing that finishes.",
     "For about two and a half years I taught it as well. A hundred-odd students came through, the youngest four years old and the oldest sixty-five. You learn quickly that the same idea needs a completely different explanation for each person.",
+    "Away from music I play chess, and my highest rating so far is 1800.",
   ],
   stats: [
     { value: "12", label: "Years learning" },
@@ -577,7 +582,7 @@ export const testimonials = [];
 export const contact = {
   headline: "Let's talk",
   blurb:
-    "I'm looking for roles in AI engineering, data science and data analysis. If you're working on something where finance and AI overlap, I'd particularly like to hear about it.",
+    "I'm looking for roles in AI engineering, data science and data analysis, and I'm just as interested in generalist or founder's-office roles, where the work changes from week to week. If you're working on something where finance and AI overlap, I'd particularly like to hear about it.",
 
   // Formspree form ID — submissions arrive in your email inbox.
   // Manage the form (or change the target address) at https://formspree.io

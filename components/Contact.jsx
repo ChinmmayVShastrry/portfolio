@@ -90,7 +90,7 @@ export default function Contact() {
                         .slice(0, -1)
                         .join(", ")} and ${profile.openToCities.at(-1)}`
                     : profile.openToCities[0]}
-                  .
+                  {profile.openToRemote ? ", and remote" : ""}.
                 </p>
               </>
             )}

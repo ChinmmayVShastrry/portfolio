@@ -63,7 +63,7 @@ export default function Hero() {
             {profile.openToCities?.length > 0 && (
               <span className="flex items-center gap-2 text-sm font-medium text-cocoa dark:text-latte">
                 <Briefcase size={16} className="text-terracotta-dark dark:text-ember" aria-hidden="true" />
-                Open to {profile.openToCities.join(" · ")}
+                Open to {[...profile.openToCities, ...(profile.openToRemote ? ["Remote"] : [])].join(" · ")}
               </span>
             )}
           </div>

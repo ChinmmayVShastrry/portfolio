@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Briefcase, GraduationCap, Award } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
@@ -52,6 +53,16 @@ export default function Experience() {
                   <p className="mt-3 leading-relaxed text-cocoa dark:text-latte">
                     {entry.description}
                   </p>
+                  {entry.photo && (
+                    <Image
+                      src={entry.photo}
+                      alt={entry.photoAlt ?? ""}
+                      width={640}
+                      height={427}
+                      sizes="(min-width: 768px) 420px, 100vw"
+                      className="mt-5 h-auto w-full max-w-md rounded-2xl shadow-soft"
+                    />
+                  )}
                 </div>
               </Reveal>
             );
