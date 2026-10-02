@@ -477,9 +477,20 @@ export const caseStudies = [
 ];
 
 /* ────────────────────────────────────────────────
- *  Experience / education timeline (newest first)
- *  type: "work" | "education" | "certification"  (picks the icon)
+ *  Journey: story strip, main timeline, and a "learning" cluster.
  * ──────────────────────────────────────────────── */
+
+/* The three-step story shown above the timeline. */
+export const journeyStory = [
+  { label: "Financial markets", when: "2019 – 2024", note: "My own practice, 50+ clients" },
+  { label: "Retraining", when: "From Jan 2025", note: "AI engineering, then IIMBx FinTech" },
+  { label: "Building", when: "Oct 2025 – now", note: "Rubixe, then my own projects" },
+];
+
+/* Main timeline (newest first). `highlight` is the one line people read.
+   type: "work" | "education"  (picks the icon).
+   `photos` is optional: { src, alt, caption, width, height, banner }.
+   A photo with banner: true runs full width under the entry. */
 export const timeline = [
   {
     type: "education",
@@ -487,12 +498,26 @@ export const timeline = [
     org: "IIMBx Digital Learning Foundation · IIM Bangalore",
     period: "Nov 2025 – Oct 2026",
     location: "Online",
-    // Optional photo shown beside the entry. Drop the file at this path
-    // (e.g. a picture from the valedictory at IIM Bangalore) and uncomment:
-    // photo: "/images/iimb.jpg",
-    // photoAlt: "Receiving the FinTech programme certificate at IIM Bangalore",
+    highlight: "First cohort, with the certificate received on the IIM Bangalore campus.",
     description:
-      "A nine-month online programme from the first cohort, finished with the certificate handed over at the valedictory on the IIM Bangalore campus. What I liked most was seeing finance and technology taught together, as if they belong together.",
+      "A nine-month online programme that ended with the valedictory at IIM Bangalore. What I liked most was seeing finance and technology taught together, as if they belong together.",
+    photos: [
+      {
+        src: "/images/iimbx/certificate.webp",
+        width: 1200,
+        height: 800,
+        alt: "Chinmmay holding his Advanced Level FinTech Certificate, standing between two IIM Bangalore faculty members in front of the IIM Bangalore and IIMBx logos",
+        caption: "Receiving the Advanced Level FinTech Certificate at IIM Bangalore",
+      },
+      {
+        banner: true,
+        src: "/images/iimbx/cohort.webp",
+        width: 1800,
+        height: 815,
+        alt: "The full first FinTech cohort and faculty, gathered outdoors at IIM Bangalore at the valedictory, many holding their certificate folders",
+        caption: "The first FinTech cohort at the valedictory, IIM Bangalore",
+      },
+    ],
   },
   {
     type: "work",
@@ -500,35 +525,9 @@ export const timeline = [
     org: "Rubixe AI Solutions",
     period: "Oct 2025 – Jun 2026",
     location: "Bengaluru, India",
+    highlight: "Three production-style systems, including a sign-language recogniser at 99.87% accuracy.",
     description:
-      "Built and deployed end-to-end ML pipelines across computer vision and NLP, delivering three production-style systems. Handled the full model lifecycle from preprocessing through training, tuning and evaluation, and wrote the technical documentation covering performance, business impact and deployment.",
-  },
-  {
-    type: "certification",
-    title: "AI Engineer Certifications",
-    org: "NASSCOM · IABAC",
-    period: "2026",
-    location: "India",
-    description:
-      "Independently accredited AI Engineer certifications from NASSCOM and IABAC, validating applied machine learning and GenAI competency.",
-  },
-  {
-    type: "education",
-    title: "AI Engineer Professional Program",
-    org: "DataMites",
-    period: "2025",
-    location: "Bengaluru, India",
-    description:
-      "Intensive offline professional programme covering the applied AI engineering stack, from classical machine learning through deep learning and deployment.",
-  },
-  {
-    type: "education",
-    title: "Bachelor of Commerce (B.Com)",
-    org: "Gulbarga University",
-    period: "Graduated Feb 2025",
-    location: "India",
-    description:
-      "Graduated with 81.43%, covering financial accounting, corporate finance and quantitative analysis.",
+      "Built and deployed end-to-end ML pipelines across computer vision and NLP. Handled the full model lifecycle from preprocessing through training, tuning and evaluation, and wrote the technical documentation covering performance, business impact and deployment.",
   },
   {
     type: "work",
@@ -536,10 +535,36 @@ export const timeline = [
     org: "Independent / Freelance",
     period: "2019 – 2024",
     location: "Bengaluru, India",
+    highlight: "Equity and derivatives for 50+ clients, in my own practice.",
     description:
-      "Ran an independent practice built around portfolio management: equity and derivatives for 50+ clients, using fundamental and technical analysis alongside options strategy. Held an AngelOne sub-brokership and a Tata AIA insurance agency alongside it, and handled market consultation, ITR filing, and teaching clients the practical side of trading (placing orders, stop losses, targets). Built Python and Excel workflows to screen positions and track downside risk.",
+      "Ran an independent practice built around portfolio management, using fundamental and technical analysis alongside options strategy. Held an AngelOne sub-brokership and a Tata AIA insurance agency alongside it, and handled market consultation, ITR filing, and teaching clients the practical side of trading (placing orders, stop losses, targets). Built Python and Excel workflows to screen positions and track downside risk.",
   },
 ];
+
+/* Courses and degrees, shown together as a compact "learning" cluster. */
+export const learningCluster = {
+  title: "Learning along the way",
+  items: [
+    {
+      title: "AI Engineer Certifications",
+      org: "NASSCOM · IABAC",
+      period: "2026",
+      note: "Independently accredited, covering applied machine learning and GenAI.",
+    },
+    {
+      title: "AI Engineer Professional Program",
+      org: "DataMites, Bengaluru",
+      period: "2025",
+      note: "An intensive offline programme, from classical machine learning through deep learning and deployment.",
+    },
+    {
+      title: "Bachelor of Commerce",
+      org: "Gulbarga University",
+      period: "Graduated Feb 2025",
+      note: "81.43%, covering financial accounting, corporate finance and quantitative analysis.",
+    },
+  ],
+};
 
 /* ────────────────────────────────────────────────
  *  Beyond Work — the music section.
