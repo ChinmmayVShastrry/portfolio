@@ -1,4 +1,5 @@
 import Reveal from "@/components/Reveal";
+import Expandable from "@/components/Expandable";
 import SectionHeading from "@/components/SectionHeading";
 import { whyHireMe } from "@/data/content";
 
@@ -10,7 +11,7 @@ export default function WhyHireMe() {
   if (!whyHireMe?.reasons?.length) return null;
 
   return (
-    <section id="why" className="px-5 py-20 sm:px-8 md:py-28">
+    <section id="why" className="px-5 py-16 sm:px-8 md:py-28">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow={whyHireMe.eyebrow}
@@ -36,9 +37,9 @@ export default function WhyHireMe() {
                 <h3 className="font-display text-xl font-semibold leading-snug">
                   {reason.title}
                 </h3>
-                <p className="mt-2.5 leading-relaxed text-cocoa dark:text-latte">
+                <Expandable lines={3} className="mt-2.5 leading-relaxed text-cocoa dark:text-latte">
                   {reason.body}
-                </p>
+                </Expandable>
               </div>
             </Reveal>
           ))}

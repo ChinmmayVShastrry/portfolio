@@ -36,7 +36,7 @@ export default function ThemeToggle() {
       type="button"
       onClick={toggle}
       aria-label={mounted && isDark ? "Switch to light mode" : "Switch to dark mode"}
-      className="rounded-full p-2.5 text-cocoa transition-colors hover:bg-sand hover:text-terracotta dark:text-latte dark:hover:bg-espresso dark:hover:text-honey"
+      className="rounded-full p-3 text-cocoa transition-colors hover:bg-sand hover:text-terracotta dark:text-latte dark:hover:bg-espresso dark:hover:text-honey"
     >
       {mounted && isDark ? (
         <Sun size={20} aria-hidden="true" />

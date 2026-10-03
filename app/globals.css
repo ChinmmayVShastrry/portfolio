@@ -78,7 +78,7 @@ p {
 
   /* Inline text link with an underline that grows in on hover */
   .text-link {
-    @apply inline-flex items-center gap-1.5 font-medium text-terracotta-dark underline decoration-terracotta-dark/30 underline-offset-4 transition-colors duration-200 hover:decoration-terracotta-dark dark:text-ember dark:decoration-ember/30 dark:hover:decoration-ember;
+    @apply inline-flex min-h-11 items-center gap-1.5 font-medium text-terracotta-dark underline decoration-terracotta-dark/30 underline-offset-4 transition-colors duration-200 hover:decoration-terracotta-dark dark:text-ember dark:decoration-ember/30 dark:hover:decoration-ember;
   }
 
   /* Small uppercase label above section titles */

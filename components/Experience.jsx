@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Briefcase, GraduationCap } from "lucide-react";
 import Reveal from "@/components/Reveal";
+import Expandable from "@/components/Expandable";
 import SectionHeading from "@/components/SectionHeading";
 import { timeline, journeyStory, learningCluster } from "@/data/content";
 
@@ -13,15 +14,29 @@ const types = {
 function Photo({ photo, sizes, className = "" }) {
   return (
     <figure className={className}>
-      <div className="overflow-hidden rounded-2xl border border-linen bg-sand shadow-soft dark:border-bark dark:bg-espresso">
-        <Image
-          src={photo.src}
-          alt={photo.alt}
-          width={photo.width}
-          height={photo.height}
-          sizes={sizes}
-          className="h-auto w-full"
-        />
+      <div className="relative overflow-hidden rounded-2xl border border-linen bg-sand shadow-soft dark:border-bark dark:bg-espresso">
+        {photo.banner ? (
+          // Very wide on a desktop; on a phone it is cropped to 4:3 so the
+          // faces stay big enough to see.
+          <div className="relative aspect-[4/3] md:aspect-[1800/815]">
+            <Image
+              src={photo.src}
+              alt={photo.alt}
+              fill
+              sizes={sizes}
+              className="object-cover"
+            />
+          </div>
+        ) : (
+          <Image
+            src={photo.src}
+            alt={photo.alt}
+            width={photo.width}
+            height={photo.height}
+            sizes={sizes}
+            className="h-auto w-full"
+          />
+        )}
       </div>
       <figcaption className="mt-2.5 text-sm text-cocoa dark:text-latte">
         {photo.caption}
@@ -37,7 +52,7 @@ function Photo({ photo, sizes, className = "" }) {
  */
 export default function Experience() {
   return (
-    <section id="experience" className="px-5 py-20 sm:px-8 md:py-28">
+    <section id="experience" className="px-5 py-16 sm:px-8 md:py-28">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="Journey"
@@ -91,9 +106,12 @@ export default function Experience() {
                       {entry.highlight}
                     </p>
                   )}
-                  <p className="mt-2 leading-relaxed text-cocoa dark:text-latte">
+                  <Expandable
+                    lines={3}
+                    className="mt-2 leading-relaxed text-cocoa dark:text-latte"
+                  >
                     {entry.description}
-                  </p>
+                  </Expandable>
                   {side.map((photo) => (
                     <Photo
                       key={photo.src}

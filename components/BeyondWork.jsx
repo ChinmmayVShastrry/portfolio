@@ -18,7 +18,7 @@ export default function BeyondWork() {
   return (
     <section
       id="beyond"
-      className="bg-sand/50 px-5 py-20 sm:px-8 md:py-28 dark:bg-espresso/40"
+      className="bg-sand/50 px-5 py-16 sm:px-8 md:py-28 dark:bg-espresso/40"
     >
       <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-12 md:gap-12">
         <div className="md:col-span-4">

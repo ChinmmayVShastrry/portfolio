@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ArrowRight, ExternalLink, Github, Hammer } from "lucide-react";
 import Reveal from "@/components/Reveal";
+import Expandable from "@/components/Expandable";
 import SectionHeading from "@/components/SectionHeading";
 import { projects, contact, githubActivity } from "@/data/content";
 
@@ -75,7 +76,7 @@ function ProjectLinks({ project, className = "" }) {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={`${project.title}: view the source on GitHub (new tab)`}
-          className="inline-flex items-center gap-1.5 font-medium text-cocoa transition-colors hover:text-charcoal dark:text-latte dark:hover:text-parchment"
+          className="inline-flex min-h-11 items-center gap-1.5 font-medium text-cocoa transition-colors hover:text-charcoal dark:text-latte dark:hover:text-parchment"
         >
           <Github size={15} aria-hidden="true" />
           Source
@@ -150,9 +151,9 @@ function FeaturedProject({ project, index }) {
             illustrates, since the image link itself is hidden from
             screen readers (it duplicates the Live demo link). */}
         <p className="sr-only">Screenshot: {project.alt}</p>
-        <p className="mt-4 leading-relaxed text-cocoa dark:text-latte">
+        <Expandable lines={4} className="mt-4 leading-relaxed text-cocoa dark:text-latte">
           {project.description}
-        </p>
+        </Expandable>
         <div className="mt-5">
           <Tags tags={project.tags} />
         </div>
@@ -195,9 +196,11 @@ function CompactProject({ project, delay, span = "" }) {
           {project.subtitle}
         </p>
       )}
-      <p className="mt-3 flex-1 text-sm leading-relaxed text-cocoa dark:text-latte">
-        {project.description}
-      </p>
+      <div className="mt-3 flex-1">
+        <Expandable lines={4} className="text-sm leading-relaxed text-cocoa dark:text-latte">
+          {project.description}
+        </Expandable>
+      </div>
       <div className="mt-4">
         <Tags tags={project.tags} />
       </div>
@@ -234,7 +237,7 @@ export default async function Projects() {
   const recent = await getRecentRepos();
 
   return (
-    <section id="projects" className="px-5 py-20 sm:px-8 md:py-28">
+    <section id="projects" className="px-5 py-16 sm:px-8 md:py-28">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="Selected work"

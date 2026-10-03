@@ -50,7 +50,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="px-5 py-20 sm:px-8 md:py-28">
+    <section id="contact" className="px-5 py-16 sm:px-8 md:py-28">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="Contact"
@@ -109,7 +109,7 @@ export default function Contact() {
                       rel="noopener noreferrer"
                       className="group inline-flex items-center gap-3 text-cocoa transition-colors hover:text-terracotta-dark dark:text-latte dark:hover:text-ember"
                     >
-                      <span className="rounded-xl border border-linen bg-sand/60 p-2.5 transition-[transform,border-color] duration-200 ease-out group-hover:-translate-y-0.5 group-hover:border-terracotta-dark dark:border-bark dark:bg-espresso dark:group-hover:border-ember">
+                      <span className="rounded-xl border border-linen bg-sand/60 p-3 transition-[transform,border-color] duration-200 ease-out group-hover:-translate-y-0.5 group-hover:border-terracotta-dark dark:border-bark dark:bg-espresso dark:group-hover:border-ember">
                         <Icon size={18} aria-hidden="true" />
                       </span>
                       <span className="text-sm font-medium">{social.label}</span>

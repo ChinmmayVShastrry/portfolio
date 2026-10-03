@@ -1,4 +1,5 @@
 import Reveal from "@/components/Reveal";
+import Expandable from "@/components/Expandable";
 import SectionHeading from "@/components/SectionHeading";
 import CountUp from "@/components/CountUp";
 import { about } from "@/data/content";
@@ -8,7 +9,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="bg-sand/50 px-5 py-20 sm:px-8 md:py-28 dark:bg-espresso/40"
+      className="bg-sand/50 px-5 py-16 sm:px-8 md:py-28 dark:bg-espresso/40"
     >
       <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-12 md:gap-12">
         <div className="md:col-span-4">
@@ -18,9 +19,11 @@ export default function About() {
         <div className="md:col-span-8">
           {about.bio.map((paragraph, i) => (
             <Reveal key={i} delay={0.08 * i}>
-              <p className="mb-6 max-w-[65ch] text-lg leading-relaxed text-cocoa dark:text-latte">
-                {paragraph}
-              </p>
+              <div className="mb-6 max-w-[65ch]">
+                <Expandable lines={5} className="text-lg leading-relaxed text-cocoa dark:text-latte">
+                  {paragraph}
+                </Expandable>
+              </div>
             </Reveal>
           ))}
 

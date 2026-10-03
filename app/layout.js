@@ -3,6 +3,7 @@ import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { siteMeta, profile, contact, projects } from "@/data/content";
 import ScrollProgress from "@/components/ScrollProgress";
+import MobileBar from "@/components/MobileBar";
 
 /* Typography:
    - Figtree  → clean, friendly sans-serif for body text
@@ -154,6 +155,7 @@ export default function RootLayout({ children }) {
         </a>
         <ScrollProgress />
         {children}
+        <MobileBar resumeUrl={profile.resumeUrl} email={profile.email} />
         {/* Free, cookie-less visitor counts. Collects nothing until Web
             Analytics is switched on for this project in the Vercel
             dashboard (Project → Analytics → Enable). Only included in

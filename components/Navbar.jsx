@@ -86,7 +86,7 @@ export default function Navbar({ base = "" }) {
         <a
           href={base ? "/" : "#top"}
           translate="no"
-          className="font-display text-lg font-semibold tracking-tight transition-colors hover:text-terracotta-dark dark:hover:text-ember"
+          className="inline-flex min-h-11 items-center font-display text-lg font-semibold tracking-tight transition-colors hover:text-terracotta-dark dark:hover:text-ember"
         >
           {profile.name}
           <span className="text-terracotta dark:text-ember">.</span>
@@ -131,7 +131,7 @@ export default function Navbar({ base = "" }) {
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
-            className="rounded-full p-2.5 text-cocoa transition-[color,transform] duration-150 active:scale-95 dark:text-latte"
+            className="rounded-full p-3 text-cocoa transition-[color,transform] duration-150 active:scale-95 dark:text-latte"
           >
             {menuOpen ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
           </button>

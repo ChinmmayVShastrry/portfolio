@@ -72,6 +72,10 @@ export const profile = {
     text: "Building a multi-agent trading system, and learning MCP and FastAPI alongside it.",
   },
 
+  // Shorter intro used on phones, so the buttons stay on the first screen.
+  introShort:
+    "I build RAG systems, LLM applications and machine-learning models, and I came to them after five years managing investment portfolios.",
+
   // Portrait shown in the hero
   photo: "/images/profile.jpg",
   photoAlt: "Portrait of Chinmmay V Shastrry",
