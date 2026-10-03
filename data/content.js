@@ -320,6 +320,39 @@ export const projects = [
     sourceUrl: "",
   },
   {
+    title: "Transformer Atlas",
+    subtitle: "Forty years of sequence modelling, explained",
+    description:
+      "An interactive explainer of how transformers went from an idea to everything, from 1986 to today. Eleven ideas across three eras (before transformers, the transformer itself, and the LLM era), from RNNs and LSTMs through attention, positional encoding, RoPE, RLHF, scaling laws and mixture of experts. Each one has the mechanism on screen beside it, with sliders to play with and live gpt-4o-mini demos.",
+    image: "/images/shots/transformer-atlas.webp",
+    alt: "Transformer Atlas: the headline 'How Transformers went from an idea to everything', with a side index of three eras",
+    tags: ["Transformers", "Attention", "LLMs", "Interactive", "Explainer"],
+    liveUrl: "https://transformer-atlas.vercel.app",
+    sourceUrl: "https://github.com/ChinmmayVShastrry/transformer-atlas",
+  },
+  {
+    title: "Bookmark Intelligence",
+    subtitle: "A privacy-first bookmark manager",
+    description:
+      "Imports a browser bookmark export, then organizes, searches, analyzes and cleans it up entirely on your device, with no account, no uploads and no AI API. A local classifier suggests categories, search understands operators like tag:ai and domain:github.com, and a health score and duplicate finder show what to clean. A 12,000-bookmark import never froze the page for more than 49 ms.",
+    image: "/images/shots/bookmark-intelligence.webp",
+    alt: "Bookmark Intelligence: a landing page showing messy bookmark groups turning into neat categories such as AI, Finance and Career",
+    tags: ["Privacy-first", "IndexedDB", "Web Workers", "Fuzzy search", "Offline"],
+    liveUrl: "https://bookmark-intelligence.vercel.app",
+    sourceUrl: "https://github.com/ChinmmayVShastrry/bookmark-intelligence",
+  },
+  {
+    title: "Room Planner",
+    subtitle: "Plan your room before you move a thing",
+    description:
+      "A free, browser-based 2D room and furniture planner. Draw a room to scale, drop in 50+ furniture items at realistic sizes, drag them around, and find out whether the layout actually works, with overlap warnings and an optional walking-space check. Exports to PNG, SVG, JSON or a printed floor plan, and the geometry and collision logic are covered by 113 unit tests.",
+    image: "/images/shots/room-planner.webp",
+    alt: "Room Planner: a bedroom drawn to scale, 12 by 14 feet, with a queen bed, rug, wardrobe and chair",
+    tags: ["Geometry", "Collision detection", "SVG", "Unit tests", "No backend"],
+    liveUrl: "https://plan-my-room.netlify.app",
+    sourceUrl: "https://github.com/ChinmmayVShastrry/room-planner",
+  },
+  {
     title: "AI Résumé Analyzer",
     description:
       "ATS-style résumé scoring with skill-gap analysis powered by sentence-transformers, plus AI rewriting suggestions. Multi-step reasoning (parse, extract, analyse, output) produces role-specific feedback through a live scoring dashboard.",
@@ -367,7 +400,8 @@ export const projects = [
    name (this site's own repo, anything private-in-spirit). Set
    `show: false` to hide the line. */
 export const githubActivity = {
-  show: true,
+  // Off for now: the latest repos are all listed as projects above.
+  show: false,
   count: 3,
   exclude: ["portfolio"],
 };

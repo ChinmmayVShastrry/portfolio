@@ -170,6 +170,17 @@ function CompactProject({ project, delay }) {
       delay={delay}
       className="flex h-full flex-col rounded-2xl border border-linen bg-cream p-6 transition-[transform,box-shadow,border-color] duration-200 ease-out hover:-translate-y-1 hover:border-amber/60 hover:shadow-soft dark:border-bark dark:bg-night dark:hover:border-honey/40"
     >
+      {project.image && (
+        <div className="relative -mx-6 -mt-6 mb-5 aspect-[16/9] overflow-hidden rounded-t-2xl border-b border-linen dark:border-bark">
+          <Image
+            src={project.image}
+            alt={project.alt ?? ""}
+            fill
+            sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
+            className="object-cover object-top"
+          />
+        </div>
+      )}
       {project.status && (
         <span className="mb-3 inline-flex w-fit items-center gap-1.5 rounded-md bg-amber/20 px-2 py-0.5 text-xs font-semibold text-charcoal dark:bg-honey/15 dark:text-honey">
           <Hammer size={12} aria-hidden="true" />
@@ -215,7 +226,7 @@ export default async function Projects() {
         <SectionHeading
           eyebrow="Selected work"
           title="Things I've built"
-          description={`GenAI and RAG systems, deep learning, and the fundamentals underneath. ${liveCount} have live demos you can try.`}
+          description={`GenAI and RAG systems, deep learning, the fundamentals underneath, and a few tools built to be used. ${liveCount} have live demos you can try.`}
           className="mb-14 md:mb-20"
         />
 
