@@ -356,6 +356,8 @@ export const projects = [
     title: "AI Résumé Analyzer",
     description:
       "ATS-style résumé scoring with skill-gap analysis powered by sentence-transformers, plus AI rewriting suggestions. Multi-step reasoning (parse, extract, analyse, output) produces role-specific feedback through a live scoring dashboard.",
+    image: "/images/shots/resume-analyzer.webp",
+    alt: "AI Résumé Analyzer: an overview with a 64% match score, skills matched and missing, and a bar chart breaking the score into similarity, skills and structure",
     tags: ["NLP", "Sentence Transformers", "ATS", "Streamlit"],
     liveUrl: "https://resume-aianalyzer.streamlit.app/",
     sourceUrl: "https://github.com/ChinmmayVShastrry/ai-resume-analyzer",
@@ -381,6 +383,8 @@ export const projects = [
     title: "Machine Learning From Scratch",
     description:
       "K-Nearest Neighbours and linear regression implemented from first principles in NumPy, with gradient descent, loss tracking and feature scaling written by hand, then benchmarked against scikit-learn to confirm the implementations were correct.",
+    image: "/images/shots/ml-from-scratch.webp",
+    alt: "Plots from the from-scratch linear regression: the fitted regression line against the actual data, and the loss curve falling as gradient descent trains",
     tags: ["NumPy", "Gradient Descent", "scikit-learn"],
     liveUrl: "",
     sourceUrl: "https://github.com/ChinmmayVShastrry/knn-from-scratch",
