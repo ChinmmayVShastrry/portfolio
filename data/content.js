@@ -596,7 +596,7 @@ export const learningCluster = {
     {
       title: "AI Engineer Professional Program",
       org: "DataMites, Bengaluru",
-      period: "2025",
+      period: "2025 – 2026",
       note: "An intensive offline programme, from classical machine learning through deep learning and deployment.",
     },
     {
