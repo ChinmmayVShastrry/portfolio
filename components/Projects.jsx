@@ -163,12 +163,12 @@ function FeaturedProject({ project, index }) {
 }
 
 /** A compact card for the rest of the work. */
-function CompactProject({ project, delay }) {
+function CompactProject({ project, delay, span = "" }) {
   return (
     <Reveal
       as="article"
       delay={delay}
-      className="flex h-full flex-col rounded-2xl border border-linen bg-cream p-6 transition-[transform,box-shadow,border-color] duration-200 ease-out hover:-translate-y-1 hover:border-amber/60 hover:shadow-soft dark:border-bark dark:bg-night dark:hover:border-honey/40"
+      className={`${span} flex h-full flex-col rounded-2xl border border-linen bg-cream p-6 transition-[transform,box-shadow,border-color] duration-200 ease-out hover:-translate-y-1 hover:border-amber/60 hover:shadow-soft dark:border-bark dark:bg-night dark:hover:border-honey/40`}
     >
       {project.image && (
         <div className="relative -mx-6 -mt-6 mb-5 aspect-[16/9] overflow-hidden rounded-t-2xl border-b border-linen dark:border-bark">
@@ -217,6 +217,19 @@ function CompactProject({ project, delay }) {
 export default async function Projects() {
   const featured = projects.filter((p) => p.featured);
   const rest = projects.filter((p) => !p.featured);
+  // Cards with a screenshot go first, so the grid lines up; the ones
+  // without sit together underneath.
+  const withImage = rest.filter((p) => p.image);
+  const withoutImage = rest.filter((p) => !p.image);
+  // Six-column grid on desktop: a leftover one or two cards stretch to fill
+  // the last row instead of leaving a gap.
+  const spanFor = (i) => {
+    const left = withImage.length % 3;
+    const fromEnd = withImage.length - i;
+    if (left === 1 && fromEnd === 1) return "lg:col-span-6";
+    if (left === 2 && fromEnd <= 2) return "lg:col-span-3";
+    return "lg:col-span-2";
+  };
   const liveCount = projects.filter((p) => p.liveUrl).length;
   const recent = await getRecentRepos();
 
@@ -239,11 +252,23 @@ export default async function Projects() {
         <Reveal className="mb-8 mt-24 md:mt-32">
           <h3 className="font-display text-2xl font-semibold">More projects</h3>
         </Reveal>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {rest.map((project, i) => (
-            <CompactProject key={project.title} project={project} delay={0.05 * (i % 3)} />
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-6">
+          {withImage.map((project, i) => (
+            <CompactProject
+              key={project.title}
+              project={project}
+              delay={0.05 * (i % 3)}
+              span={spanFor(i)}
+            />
           ))}
         </div>
+        {withoutImage.length > 0 && (
+          <div className="mt-5 grid gap-5 sm:grid-cols-2">
+            {withoutImage.map((project, i) => (
+              <CompactProject key={project.title} project={project} delay={0.05 * (i % 2)} />
+            ))}
+          </div>
+        )}
 
         {/* Recent GitHub activity + link out to the full profile */}
         {githubProfile && (
